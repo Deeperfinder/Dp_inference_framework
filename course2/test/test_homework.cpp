@@ -8,7 +8,11 @@
 TEST(test_homework, homework1_flatten1) {
   using namespace kuiper_infer;
   Tensor<float> f1(2, 3, 4);
+  LOG(INFO) << "-------------------before Flatten-------------------";
+  f1.Show();
   f1.Flatten(true);
+  LOG(INFO) << "-------------------after Flatten-------------------";
+  f1.Show();
   ASSERT_EQ(f1.raw_shapes().size(), 1);
   ASSERT_EQ(f1.raw_shapes().at(0), 24);
 }
@@ -16,7 +20,11 @@ TEST(test_homework, homework1_flatten1) {
 TEST(test_homework, homework1_flatten2) {
   using namespace kuiper_infer;
   Tensor<float> f1(12, 24);
+  LOG(INFO) << "-------------------before Flatten-------------------";
+  f1.Show();
   f1.Flatten(true);
+  LOG(INFO) << "-------------------after Flatten-------------------";
+  f1.Show();
   ASSERT_EQ(f1.raw_shapes().size(), 1);
   ASSERT_EQ(f1.raw_shapes().at(0), 24 * 12);
 }
@@ -24,12 +32,17 @@ TEST(test_homework, homework1_flatten2) {
 TEST(test_homework, homework2_padding1) {
   using namespace kuiper_infer;
   Tensor<float> tensor(3, 4, 5);
+  // channels,rows,cols
   ASSERT_EQ(tensor.channels(), 3);
   ASSERT_EQ(tensor.rows(), 4);
   ASSERT_EQ(tensor.cols(), 5);
 
   tensor.Fill(1.f);
+  LOG(INFO) << "-------------------before padding-------------------";
+  tensor.Show();
   tensor.Padding({1, 2, 3, 4}, 0);
+  LOG(INFO) << "-------------------after padding-------------------";
+  tensor.Show();
   ASSERT_EQ(tensor.rows(), 7);
   ASSERT_EQ(tensor.cols(), 12);
 
@@ -37,7 +50,7 @@ TEST(test_homework, homework2_padding1) {
   for (int c = 0; c < tensor.channels(); ++c) {
     for (int r = 0; r < tensor.rows(); ++r) {
       for (int c_ = 0; c_ < tensor.cols(); ++c_) {
-        if ((r >= 2 && r <= 4) && (c_ >= 3 && c_ <= 7)) {
+        if ((r >= 1 && r <= 4) && (c_ >= 3 && c_ <= 7)) {
           ASSERT_EQ(tensor.at(c, r, c_), 1.f) << c << " "
                                               << " " << r << " " << c_;
         }
