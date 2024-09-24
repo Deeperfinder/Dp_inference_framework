@@ -1,5 +1,0 @@
-Log file created at: 2023/07/31 11:47:34
-Running on machine: 129ac4aafeb3
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I20230731 11:47:34.497870  5233 course1_main.cpp:14] Start test...
