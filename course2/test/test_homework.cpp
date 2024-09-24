@@ -9,6 +9,11 @@ TEST(test_homework, homework1_flatten1) {
   using namespace kuiper_infer;
   Tensor<float> f1(2, 3, 4);
   LOG(INFO) << "-------------------before Flatten-------------------";
+  std::vector<float> values(2*3*4);
+  for(int i=0; i<24; i++){
+    values.at(i) = float(i);
+  }
+  f1.Fill(values);
   f1.Show();
   f1.Flatten(true);
   LOG(INFO) << "-------------------after Flatten-------------------";

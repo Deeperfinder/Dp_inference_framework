@@ -21,7 +21,7 @@ TEST(test_fill_reshape, reshape1) {
   LOG(INFO) << "-------------------Reshape-------------------";
   Tensor<float> f1(2, 3, 4);
   std::vector<float> values(2 * 3 * 4);
-  // 将1到12填充到values中
+  // 将1到24填充到values中
   for (int i = 0; i < 24; ++i) {
     values.at(i) = float(i + 1);
   }

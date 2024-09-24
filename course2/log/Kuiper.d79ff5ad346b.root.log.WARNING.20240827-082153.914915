@@ -1,0 +1,5 @@
+Log file created at: 2024/08/27 08:21:53
+Running on machine: d79ff5ad346b
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F20240827 08:21:53.854593 914915 tensor.cpp:229] Check failed: this->raw_shapes_.size() <= 3 (24 vs. 3) 

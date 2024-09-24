@@ -7,6 +7,8 @@
 void Axby(const arma::fmat &x, const arma::fmat &w, const arma::fmat &b,
           arma::fmat &y) {
   // 把代码写这里 完成y = w * x + b的运算
+  y = w*x + b;
+  std::cout << y << std::endl;
 }
 
 TEST(test_arma, Axby) {
@@ -34,6 +36,7 @@ TEST(test_arma, Axby) {
 
 void EPowerMinus(const arma::fmat &x, arma::fmat &y) {
   // 把代码写这里 完成y = e^{-x}的运算
+  y = arma::exp(-x);
 }
 
 TEST(test_arma, e_power_minus) {
@@ -53,6 +56,7 @@ TEST(test_arma, e_power_minus) {
 
 void Axpy(const arma::fmat &x, arma::fmat &Y, float a, float y) {
   // 编写Y = a * x + y
+  Y = a * x + y;
 }
 
 TEST(test_arma, axpy) {

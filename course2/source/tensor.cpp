@@ -166,6 +166,17 @@ void Tensor<float>::Padding(const std::vector<uint32_t>& pads,
   uint32_t pad_cols2 = pads.at(3);  // right
 
   // 请补充代码
+  std::cout << "padding rows1:" << pad_rows1 << " pad_rows2:" << pad_rows2 << " pad_cols1:" << pad_cols1 << " pad_cols2:" << pad_cols2 << std::endl;
+  // this->data_.insert_rows(0, pad_rows1);
+  // this->data_.insert_rows(this->data_.n_rows, pad_rows2);
+  // this->data_.insert_cols(0, pad_cols1);
+  // this->data_.insert_cols(this->data_.n_cols, pad_cols2);
+  // this->data_.
+  auto new_cube = arma::fcube(this->data_.n_rows + pad_rows1 + pad_rows2, this->data_.n_cols + pad_cols1 + pad_cols2, this->data_.n_slices);
+  new_cube.fill(padding_value);
+  new_cube.subcube(pad_rows1, pad_cols1, 0, this->rows() + pad_rows1 -1, this->cols() + pad_cols1 -1, this->channels()-1) = this->data_;
+  this->data_ = new_cube;
+  this->raw_shapes_ = std::vector<uint32_t>{this->channels(), this->rows(), this->cols()};
 }
 
 void Tensor<float>::Fill(float value) {
@@ -204,6 +215,9 @@ void Tensor<float>::Show() {
 void Tensor<float>::Flatten(bool row_major) {
   CHECK(!this->data_.empty());
   // 请补充代码
+  this->Reshape({1, 1, this->rows() * this->cols() * this->channels()}, true);
+  this->raw_shapes_ = std::vector<uint32_t>{this->rows() * this->cols() * this->channels()};
+  std::cout << this->raw_shapes_.size() <<std::endl;
 }
 
 void Tensor<float>::Rand() {

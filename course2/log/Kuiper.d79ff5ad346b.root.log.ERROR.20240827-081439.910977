@@ -1,0 +1,5 @@
+Log file created at: 2024/08/27 08:14:39
+Running on machine: d79ff5ad346b
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F20240827 08:14:39.032341 910977 tensor.cpp:247] Check failed: current_size == origin_size 
