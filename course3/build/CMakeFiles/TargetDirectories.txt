@@ -1,4 +1,0 @@
-/code/Kuiperdatawhale/course3/build/CMakeFiles/rebuild_cache.dir
-/code/Kuiperdatawhale/course3/build/CMakeFiles/edit_cache.dir
-/code/Kuiperdatawhale/course3/build/CMakeFiles/test.dir
-/code/Kuiperdatawhale/course3/build/CMakeFiles/kuiper_datawhale_course3.dir
