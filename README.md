@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # KuiperInfer (自制深度学习推理框架)
 **我们在本项目的基础上开设了一个全新的课程，支持CUDA、Int8量化推理，《从零自制大模型推理框架》，以下是目录，感兴趣的同学可以扫描二维码了解或加微信lyrry1997，欢迎大家参加。**
 
@@ -101,7 +100,6 @@ KuipeInfer目前2.3k star，帮助很多人获得了大厂岗位。
 29. LLama.cpp的设计和实现讲解
 30. Miopen（AMD出品，对标CUDNN）的设计和实现讲解
 31. 总结
-=======
 # Dp_inference_framework
 Deep learning inference framework, based on cpp、armadillo.
 
@@ -112,4 +110,3 @@ Deep learning inference framework, based on cpp、armadillo.
 1. 阅读源码
 2. 听B站的课程
 3. 将每次课的课后作业完成，调试成功
->>>>>>> e316ec463aa154b7541dcb37d50d5ed8d09101ae
